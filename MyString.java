@@ -1,4 +1,4 @@
-public class  MyString implements CharSequence, Comparable<CharSequence {
+public class  MyString implements CharSequence, Comparable<CharSequence> {
   private char[] data;
   public MyString( CharSequence s) {
     data = new char[s.length()];
@@ -27,11 +27,13 @@ public class  MyString implements CharSequence, Comparable<CharSequence {
 
   private CharSequence subsequence( int start, int end) {
     if ( start > end || start < 0 || end < 0)
-    throw new IndexOutOfBoundsException;
-    new
+    throw new IndexOutOfBoundsException();
+    String outputs = "";
     for( int i= start; i < end; i++) {
-
+      outputs += charAt(i);
     }
+    CharSequence output = new MyString(outputs);
+    return output;
   }
 
 }
