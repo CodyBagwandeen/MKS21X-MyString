@@ -21,7 +21,7 @@ public class  MyString implements CharSequence, Comparable<CharSequence {
 
   private char charAt( int index) {
     if ( index >= length() || index < 0)
-    throw new IndexOutOfBoundsException ;
+    throw new IndexOutOfBoundsException() ;
     return data[index];
   }
 
