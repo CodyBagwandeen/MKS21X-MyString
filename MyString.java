@@ -7,11 +7,11 @@ public class  MyString implements CharSequence, Comparable<CharSequence> {
     }
   }
 
-  private int length() {
+  public int length() {
     return data.length;
   }
 
-  private String toString() {
+  public String toString() {
     String output = "";
     for ( int i =0; i < length(); i++) {
       output += charAt(i);
@@ -19,13 +19,13 @@ public class  MyString implements CharSequence, Comparable<CharSequence> {
     return output;
   }
 
-  private char charAt( int index) {
+  public char charAt( int index) {
     if ( index >= length() || index < 0)
     throw new IndexOutOfBoundsException() ;
     return data[index];
   }
 
-  private CharSequence subsequence( int start, int end) {
+  public CharSequence subSequence( int start, int end) {
     if ( start > end || start < 0 || end < 0)
     throw new IndexOutOfBoundsException();
     String outputs = "";
@@ -34,6 +34,23 @@ public class  MyString implements CharSequence, Comparable<CharSequence> {
     }
     CharSequence output = new MyString(outputs);
     return output;
+  }
+
+  public int compareTo( CharSequence s) {
+    if ( s == null)
+    throw new NullPointerException();
+    if ( length() > s.length() )
+    return 1;
+    if ( length() < s.length())
+    return -1;
+
+    for ( int i = 0; i < length(); i++) {
+      if( charAt(i) > s.charAt(i))
+      return 1;
+      if ( charAt(i) < s.charAt(i))
+      return -1;
+    }
+    return 0;
   }
 
 }
