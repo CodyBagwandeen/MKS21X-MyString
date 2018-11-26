@@ -8,7 +8,7 @@ public class  MyString implements CharSequence, Comparable<CharSequence {
   }
 
   private int length() {
-
+    return data.length;
   }
 
   private String toString() {
